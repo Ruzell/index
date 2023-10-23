@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manual Traffic Light</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #000000;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .traffic-light {
+      width: 150px;
+      height: 300px;
+      background-color: #F875AA;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .light {
+      width: 110px;
+      height: 150px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+
+    #red {
+      background-color: red;
+    }
+
+    #yellow {
+      background-color: yellow;
+    }
+
+    #green {
+      background-color: green;
+    }
+
+    #switch-button:hover{
+      background-color: pink;
+    }
+
+    h1 {
+     font-size: 24px;
+     text-align: center;
+     color: white;
+     position: relative;
+    }
+
+    h1:hover{
+      background-color: pink;
+      color: black;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Traf-pink Light</h1>
+    <br>
+    <div class="traffic-light">
+      <div id="red" class="light"></div>
+      <div id="yellow" class="light"></div>
+      <div id="green" class="light"></div>
+    </div>
+    <br>
+    <button id="switch-button">Switch Light</button>
+  </div>
+
+  <script>
+    let color = 0;
+
+    function switchLight() {
+      switch (color) {
+        case 0:
+          document.getElementById("red").style.backgroundColor = "red";
+          document.getElementById("yellow").style.backgroundColor = "black";
+          document.getElementById("green").style.backgroundColor = "black";
+          color = 1;
+          break;
+        case 1:
+          document.getElementById("red").style.backgroundColor = "black";
+          document.getElementById("yellow").style.backgroundColor = "yellow";
+          document.getElementById("green").style.backgroundColor = "black";
+          color = 2;
+          break;
+        case 2:
+          document.getElementById("red").style.backgroundColor = "black";
+          document.getElementById("yellow").style.backgroundColor = "black";
+          document.getElementById("green").style.backgroundColor = "green";
+          color = 0;
+          break;
+      }
+    }
+
+    const switchButton = document.getElementById("switch-button");
+    switchButton.addEventListener("click", switchLight);
+  </script>
+</body>
+</html>
