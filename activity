@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+</head>
+<body>
+<h3>Simple Interest Calculator</h3>
+<form onsubmit="cal(); return false;">
+  Principle: <input type="number" name="Principle" id="P"><br>
+  Rate: <input type="number" name="Rate" id="R"><br>
+  Time: <input type="number" name="Time" id="T"><br>
+  <input type="submit" id="B">
+</form>
+<script type="text/javascript">
+  function cal() {
+    let principle = document.getElementById('P').value;
+    let rate = document.getElementById('R').value;
+    let time = document.getElementById('T').value;
+
+    let simpleInterest = (principle * rate * time) / 100;
+    
+    console.log("Simple Interest:", simpleInterest);
+  }
+</script>
+</body>
+</html>
