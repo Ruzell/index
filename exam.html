@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+
+
+  <label for="Input">Input: </label>
+  <input type="text" id="Input" />
+  <button onclick="inputdata()">Submit</button>
+
+  <p id="result"></p>
+
+  <script>
+    function inputdata() {
+      var inputNumber = parseInt(document.getElementById("Input").value);
+      var isOdd = inputNumber % 2 !== 0;
+      var isEven = !isOdd;
+      var isPrime = isPrimeNumber(inputNumber);
+
+      var oddNumbers = [];
+      var evenNumbers = [];
+
+      for (var i = 1; i <= inputNumber; i++) {
+        if (i % 2 !== 0) {
+          oddNumbers.push(i);
+        } else {
+          evenNumbers.push(i);
+        }
+      }
+
+      var resultMessage = `
+                           Odd Numbers: ${oddNumbers.length > 0 ? oddNumbers.join(', ') : 'No odd numbers'}<br>
+                           Even Numbers: ${evenNumbers.length > 0 ? evenNumbers.join(', ') : 'No even numbers'}<br>
+                           `;
+
+      document.getElementById("result").innerHTML = resultMessage;
+    }
+
+    function isPrimeNumber(num) {
+      if (num <= 1) return false;
+      for (var i = 2; i <= Math.sqrt(num); i++) {
+        if (num % i === 0) {
+          return false;
+        }
+      }
+      return true;
+    }
+  </script>
+
+</body>
+</html>
