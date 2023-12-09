@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculator</title>
+</head>
+<body>
+
+<script>
+  const calculate = {
+    add: function (a, b) {
+      return a + b;
+    },
+    subtract: function (a, b) {
+      return a - b;
+    },
+    multiply: function (a, b) {
+      return a * b;
+    },
+    divide: function (a, b) {
+      try {
+        if (b === 0) {
+          throw new Error("Not divisible by zero");
+        }
+        return a / b;
+      } catch (error) {
+        console.error(error.message);
+      }
+    }
+  };
+
+  const resultAdd = calculate.add(5, 1);
+  const resultSubtract = calculate.subtract(5, 2);
+  const resultMultiply = calculate.multiply(4, 4);
+  const resultDivide = calculate.divide(5, 2);
+
+  console.log("Addition:", resultAdd);
+  console.log("Subtraction:", resultSubtract);
+  console.log("Multiplication:", resultMultiply);
+  console.log("Division:", resultDivide);
+</script>
+
+</body>
+</html>
+//sorry sir late dai ko po na ppaste sa cp ko kaya tog restart ko muna cp ko kaya nahaloyan.
